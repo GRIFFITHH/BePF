@@ -9,7 +9,7 @@ public class MainController {
     @GetMapping("/")
     public String index(Model model){
 //        model.addAttribute("eventName", "EVENT");
-        //예지 수정 테스트
+        //광훈 수정 테스트
         return "index";
     }
 }
