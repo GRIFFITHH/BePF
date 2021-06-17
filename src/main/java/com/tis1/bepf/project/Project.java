@@ -1,17 +1,18 @@
 package com.tis1.bepf.project;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Project {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
     String stack;
     String region;
-
-    public Project(Long id, String name, String stack, String region){
-        this.id = id;
-        this.name = name;
-        this.stack = stack;
-        this.region = region;
-    }
 
     public Long getId() {
         return id;

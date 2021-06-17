@@ -7,8 +7,9 @@ public class MemoryProjectRepository implements ProjectRepository{
     private static Map<Long, Project> store = new HashMap<>();
 
     @Override
-    public void save(Project project) {
+    public Project save(Project project) {
         store.put(project.getId(), project);
+        return project;
     }
 
     @Override

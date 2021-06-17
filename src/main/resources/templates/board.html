@@ -37,7 +37,7 @@
             <thead>
             <tr>
                 <th>#</th>
-                <th>이름</th>
+                <th>프로젝트 이름</th>
                 <th>기술스택</th>
                 <th>지역</th>
             </tr>
@@ -45,9 +45,9 @@
             <tbody>
             <tr th:each="project : ${projects}">
                 <td th:text="${project.id}"></td>
+                <td th:text="${project.name}"></td>
                 <td th:text="${project.stack}"></td>
                 <td th:text="${project.region}"></td>
-
             </tr>
             </tbody>
         </table>

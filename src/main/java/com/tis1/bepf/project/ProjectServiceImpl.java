@@ -1,20 +1,27 @@
 package com.tis1.bepf.project;
 
-public class ProjectServiceImple implements ProjectService{
+import java.util.List;
+
+public class ProjectServiceImpl implements ProjectService{
 
     private final ProjectRepository projectRepository;
 
-    public ProjectServiceImple(ProjectRepository projectRepository){
+    public ProjectServiceImpl(ProjectRepository projectRepository){
         this.projectRepository = projectRepository;
     }
 
     @Override
     public Project createProject(Long id, String name, String stack, String region) {
-        return new Project(id, name, stack, region);
+        return null;
     }
 
     @Override
     public void deleteProject(Long id) {
         // to be written.
+    }
+
+    @Override
+    public List<Project> findAllProjects() {
+        return projectRepository.findAll();
     }
 }
