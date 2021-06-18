@@ -1,6 +1,5 @@
 package com.tis1.bepf.controller;
 
-import com.tis1.bepf.memberDTO.MemberDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
