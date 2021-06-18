@@ -17,15 +17,14 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public Member registerAccount(MemberDTO memberDTO) {
-        try {
-            emailExists(memberDTO.getEmail());
-            Member member = new Member();
+        if (emailExists(memberDTO.getEmail())){
+            throw new IllegalStateException("이미 존재하는 이메일입니다.");
+        } else {
+            final Member member = new Member();
             member.setEmail(memberDTO.getEmail());
             member.setNickName(memberDTO.getNickName());
             member.setPassword(memberDTO.getPassword());
-            return member;
-        } catch(IllegalStateException exception) {
-            return null;
+            return memberRepository.save(member);
         }
     }
 
@@ -45,15 +44,12 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public List<Member> findAll() {
+    public List<Member> findAllMembers() {
         return memberRepository.findAll();
     }
 
     // 같은 이름이 있는 중복 회원이 있는지 확인한다.
-    private void emailExists(String email){
-        memberRepository.findByEmail(email)
-                        .ifPresent(member -> {
-                            throw new IllegalStateException(("이미 존재하는 회원입니다."));
-                        });
+    private boolean emailExists(String email){
+        return memberRepository.findByEmail(email).isPresent();
     }
 }

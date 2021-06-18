@@ -13,7 +13,7 @@ public interface MemberService {
 
     Optional<Member> findMember(Long id);
 
-    List<Member> findAll();
+    List<Member> findAllMembers();
 
 
 }
