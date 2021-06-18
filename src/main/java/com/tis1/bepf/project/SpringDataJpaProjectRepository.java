@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface SpringDataJpaProjectRepository extends JpaRepository<Project, Long>,  ProjectRepository{
     @Override
-    Optional<Project> findByName(String name);
+    Optional<Project> findByAuthor(String author);
 
     @Override
     Optional<Project> findByStack(String stack);

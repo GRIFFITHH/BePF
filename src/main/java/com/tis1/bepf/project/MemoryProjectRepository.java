@@ -18,9 +18,9 @@ public class MemoryProjectRepository implements ProjectRepository{
     }
 
     @Override
-    public Optional<Project> findByName(String name) {
+    public Optional<Project> findByAuthor(String author) {
         return store.values().stream()
-                .filter(member -> member.getName().equals(name))
+                .filter(member -> member.getAuthor().equals(author))
                 .findAny();
     }
 

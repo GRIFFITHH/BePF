@@ -39,7 +39,7 @@ public class RegisterController {
         return "register";
     }
 
-    @PostMapping("/member/registration")
+    @PostMapping("/register")
     public ModelAndView registerUserAccount(@ModelAttribute("member") @Valid final MemberDTO memberDTO,
                                             final HttpServletRequest request, final Errors errors) {
         LOGGER.debug("Registering member account with information: {}", memberDTO);
