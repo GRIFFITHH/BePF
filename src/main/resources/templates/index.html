@@ -1,13 +1,54 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<style>
+    body{
+        width: 100vw;
+        height: 100vh;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 16px;
+        color: #111;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    .header{
+        height: 50px;
+        width: 100%;
+        border-bottom: 1px solid black;
+        display: block;
+        position: relative;
+    }
+    #side{
+        display: block;
+        position: absolute;
+        right: 50px;
+        top: 25px;
+    }
+    #side a{
+        margin-left: 10px;
+    }
+    #mainVisual{
+        border-top:1px solid black;
+        position:relative;
+    }
+    .slogan{
+        position: absolute;
+        left: 2%;
+        font-size: 25px;
+    }
+    .slogan #main{
+        font-family: 'Benne', serif;
+        font-size: 65px;
+        font-weight: 400;
+    }
+</style>
 <body>
-
+    <div th:replace="include/header :: header"></div>
+    <div id="mainVisual">
+        <!--<img th:src="images/bg.jsp">-->
+        <div class="slogan">
+            <p id="main"><span>BEst Projects w/ Friends</span></p>
+            <p><span>개발자 / 개발자가 되기 위한 사람을 위한 최고의 프로젝트와 팀원을 찾는 곳</span></p>
+        </div>
+    </div>
 </body>
 </html>
