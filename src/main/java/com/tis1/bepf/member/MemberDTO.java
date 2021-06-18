@@ -1,5 +1,7 @@
 package com.tis1.bepf.member;
 
+import com.tis1.bepf.registration.ValidEmail;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -7,6 +9,7 @@ public class MemberDTO {
 
     @NotNull
     @NotEmpty
+    @ValidEmail
     private String email;
 
     @NotNull
