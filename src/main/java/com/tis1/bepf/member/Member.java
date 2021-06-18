@@ -1,14 +1,24 @@
 package com.tis1.bepf.member;
 
+import javax.persistence.*;
 
+@Entity
 public class Member {
 
-    private Long id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id; // Key
+    private String email; //로그인시 필요
     private String name;
     private String job;
-    private Integer password; // 패스워드는 Integer? Number?//
+    private Integer password; // 패스워드는 Integer? Number?
 
+    public String getEmail() {
+        return email;
+    }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public Long getId() {
         return id;
@@ -43,7 +53,7 @@ public class Member {
     }
 
     public String toString(){
-        return "Name" + name +", Job "+ job;
+        return "Name :" + name +", Job :"+ job +", Email :"+email;
     }
 
 }

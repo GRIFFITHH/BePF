@@ -28,32 +28,18 @@ public class MemoryMemberRepository implements MemberRepository {
     }
 
     @Override
+    public Optional<Member> findByEmail(String email) {
+        return Optional.ofNullable(store.get(email));
+    }
+
+
+    @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
     }
 
-    public static void main(String[] args) {
-        //test
-        MemoryMemberRepository memoryMemberRepository = new MemoryMemberRepository();
-        Member member = new Member();
-        member.setName("spring");
-        member.setPassword(1234);
-        member.setJob("student");
-        memoryMemberRepository.save(member);
-        Member member2 = new Member();
-        member2.setJob("lawyer");
-        member2.setName("spring2");
-        member2.setPassword(12341234);
-        memoryMemberRepository.save((member2));
-
-
-        System.out.println(memoryMemberRepository.findById(1L));
-        System.out.println(memoryMemberRepository.findByName("spring"));
-        System.out.println(memoryMemberRepository.findAll());
-        System.out.println(memoryMemberRepository.findById(2L));
-        System.out.println(memoryMemberRepository.findAll());
-        System.out.println(member.toString());
-        System.out.println(member2.toString());
+    public void clearStore() {
+        store.clear();
     }
 
 }
