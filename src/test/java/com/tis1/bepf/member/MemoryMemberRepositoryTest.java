@@ -21,9 +21,8 @@ class MemoryMemberRepositoryTest {
     public void save() {
         Member member = new Member();
         member.setEmail("momoto@gmail");
-        member.setPassword(1234);
-        member.setJob("student");
-        member.setName("spring");
+        member.setPassword("1234");
+        member.setNickName("spring");
 
         repository.save(member);
         Member result = repository.findById(member.getId()).get();
@@ -34,11 +33,11 @@ class MemoryMemberRepositoryTest {
     @Test
     public void findByName(){
         Member member1 = new Member();
-        member1.setName("spring1");
+        member1.setNickName("spring1");
         repository.save(member1);
 
         Member member2 = new Member();
-        member2.setName("spring2");
+        member2.setNickName("spring2");
         repository.save(member2);
 
         Member result = repository.findByName("spring1").get();
@@ -49,18 +48,16 @@ class MemoryMemberRepositoryTest {
     @Test
     public void findAll(){
         Member member1 = new Member();
-        member1.setName("spring");
-        member1.setPassword(1234);
+        member1.setNickName("spring");
+        member1.setPassword("1234");
         member1.setEmail("spring@naver.com");
-        member1.setJob("lawyer");
 
         repository.save(member1);
 
         Member member2 = new Member();
-        member2.setName("spring2");
-        member2.setPassword(12345);
+        member2.setNickName("spring2");
+        member2.setPassword("12345");
         member2.setEmail("spring2@naver.com");
-        member2.setJob("student");
 
         repository.save(member2);
 

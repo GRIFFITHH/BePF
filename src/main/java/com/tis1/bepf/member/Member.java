@@ -6,19 +6,10 @@ import javax.persistence.*;
 public class Member {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // Key
-    private String email; //로그인시 필요
-    private String name;
-    private String job;
-    private Integer password; // 패스워드는 Integer? Number?
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    private Long id;            // Primary Key
+    private String email;       // 로그인시 필요
+    private String nickName;
+    private String password;    //
 
     public Long getId() {
         return id;
@@ -28,32 +19,37 @@ public class Member {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getEmail() {
+        return email;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getJob() {
-        return job;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setJob(String job) {
-        this.job = job;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
-    public Integer getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(Integer password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public String toString(){
-        return "Name :" + name +", Job :"+ job +", Email :"+email;
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", nickName='" + nickName + '\'' +
+                ", hashedPW='" + password + '\'' +
+                '}';
     }
-
 }
