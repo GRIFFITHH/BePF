@@ -1,0 +1,52 @@
+<!--//게시글 작성 model에서 데이터 받아오기-->
+<!--//include header-->
+<body>
+<div class="projectViewWrap">
+    <div class="projectDetailView">
+        <div class="inBox01">
+            <div class="infoTop">
+                <div class="left">
+                    <div id="no">${no}//게시물넘버</div>
+                    <div id="tit">
+                        <span id="projectViewTit">${title}//타이틀 데이터</span>
+                    </div>
+                </div>
+                <div class="right">
+                    <div id="date">${date}//등록게시일 || 수정게시일</div>
+                    <div id="proceedingMode">모집중</div>//vue(v-if)로 진행 예정
+                    <div if="userName">${userName}//유저이름</div>
+                </div>
+            </div>
+            <div class="infoMiddle">
+                <ul class="categoryInfo">
+                    <li class="categorySort">
+                        <p class="tit">프로젝트 예상기간</p>
+                        <p>${예상기간}</p>
+                    </li>
+                    <li class="categorySort">
+                        <p class="tit">모집인원</p>
+                        <p>${모집인원}</p>
+                    </li>
+                    <li class="categorySort">
+                        <p class="tit">희망지역</p>
+                        <p>${희망지역}</p>
+                    </li>
+                    <li class="categorySort">
+                        <p class="tit">구인마감일</p>
+                        <p>${마감일}</p>
+                    </li>
+                    <li class="categorySort">
+                        <p class="tit">필요기술스택</p>
+                        <p>${필요기술}</p>
+                    </li>
+                </ul>
+                <div class="contents">
+                    ${contents}
+                </div>
+                <a href="ProjectJoin?no=${no}">참가신청</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+//include footer

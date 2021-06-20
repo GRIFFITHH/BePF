@@ -1,5 +1,6 @@
-package com.tis1.bepf.memberDTO;
+package com.tis1.bepf.member;
 
+import com.tis1.bepf.registration.ValidEmail;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -8,6 +9,7 @@ public class MemberDTO {
 
     @NotNull
     @NotEmpty
+    @ValidEmail
     private String email;
 
     @NotNull
@@ -49,5 +51,14 @@ public class MemberDTO {
 
     public void setMatchingPassword(String matchingPassword) {
         this.matchingPassword = matchingPassword;
+    }
+
+    @Override
+    public String toString() {
+        return "MemberDTO{" +
+                "email='" + email + '\'' +
+                ", nickName='" + nickName + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

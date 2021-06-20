@@ -6,10 +6,10 @@ import javax.persistence.*;
 public class Member {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;            // Primary Key
-    private String email;       // 로그인시 필요
-    private String nickName;
-    private String password;    //
+    Long id;            // Primary Key
+    String email;       // 로그인시 필요
+    String nickName;
+    String password;
 
     public Long getId() {
         return id;
